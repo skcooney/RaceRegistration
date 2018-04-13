@@ -29,4 +29,30 @@ EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("RaceReg
 		List<RaceInfo> all = typedQuery.getResultList();
 		return all;
 	}
+	public void deleteRaceInfo(RaceInfo raceInfoToDelete) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<RaceInfo> typedQuery = em.createQuery("select ri from RaceInfo ri where ri.raceInfoId = :selectedId",RaceInfo.class);
+		typedQuery.setParameter("selectedId", raceInfoToDelete.getId()); 
+		typedQuery.setMaxResults(1);
+		RaceInfo result = typedQuery.getSingleResult();
+		System.out.println("TEST - result: " + result);
+		em.remove(result);
+		em.getTransaction().commit();
+		em.close();
+	}
+	public RaceInfo searchForRaceInfoById(int idToEdit) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		RaceInfo foundItem =  em.find(RaceInfo.class, idToEdit);
+		em.close();
+		return foundItem; 
+	}
+	public void editRaceInfo(RaceInfo toEdit) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin(); 
+		em.merge(toEdit);
+		em.getTransaction().commit();
+		em.close();
+	}
 }
