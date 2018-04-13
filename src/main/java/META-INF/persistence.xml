@@ -3,6 +3,7 @@
 	<persistence-unit name="RaceRegistration" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>edu.dmacc.spring.raceregistration.RaceInfo</class>
+		<class>edu.dmacc.spring.raceregistration.Participant</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/raceregistration"/>
