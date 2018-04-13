@@ -23,7 +23,7 @@ public class RaceRegistrationController {
 	public ModelAndView participant() {
 		ModelAndView modelAndView = new ModelAndView();
 	
-		modelAndView.setViewName("participantForm");
+		modelAndView.setViewName("/participantForm");
 		modelAndView.addObject("participant", new Participant());
 		modelAndView.addObject("states", states);
 		return modelAndView;
@@ -58,7 +58,7 @@ public class RaceRegistrationController {
 		return modelAndView;
 			
 		}
-	@RequestMapping(value = "/raceInforesult")
+	@RequestMapping(value = "/raceInfoResult")
 	public ModelAndView processRaceInfo(RaceInfo raceInfo) {
 		
 		ModelAndView modelAndView = new ModelAndView();
