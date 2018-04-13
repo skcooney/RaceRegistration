@@ -28,6 +28,6 @@
             <td>${r.raceType}</td>
         </tr>
         </table>
-<a href = "viewAll.mvc">View all Races</a>
+<a href = "viewAllRaceInfo.mvc">View all Races</a>
 </body>
 </html>

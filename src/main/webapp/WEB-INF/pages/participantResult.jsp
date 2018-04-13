@@ -35,6 +35,6 @@
             <td>${p.state}</td>
         </tr>
         </table>
-<a href = "viewAll.mvc">View all Participants</a>
+<a href = "viewAllParticipants.mvc">View all Participants</a>
 </body>
 </html>
