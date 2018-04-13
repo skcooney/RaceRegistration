@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ParticipantController {
+public class RaceRegistrationController {
 	@Autowired ParticipantDao dao;
+	@Autowired RaceInfoDao dao1;
 	
+	private static final String[] races = {"5k", "10k", "Half Marathon", "Full Marathon"};
 	private static final String [] states = {"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY","LA", "ME", "MD", "MA", "MI", "MN", "MS","MO", "MT", "NE", "NA", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN","TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
 
 	
@@ -27,22 +29,48 @@ public class ParticipantController {
 		return modelAndView;
 		
 	}
-				
+		@RequestMapping(value="/raceInfoForm")
+		public ModelAndView raceInfo() {
+			ModelAndView modelAndView = new ModelAndView();
+
+			modelAndView.setViewName("raceInfoForm");
+			modelAndView.addObject("raceInfo",new RaceInfo());
+			modelAndView.addObject("races",races);
+
+			return modelAndView;
+		}
+
+		@RequestMapping(value = "/menu")
+		public ModelAndView main() {
+			ModelAndView modelAndView = new ModelAndView();
+			modelAndView.setViewName("mainMenu");
+			return modelAndView;
+
+		}		
 	@RequestMapping(value = "/result")
 	public ModelAndView processParticipant(Participant participant) {
-		System.out.println("In processParticipant");
+		
 		ModelAndView modelAndView = new ModelAndView();
-		System.out.println("Value in getLastName" +participant.getLastName());
+		
 		dao.insertParticipant(participant);
 		modelAndView.setViewName("participantResult");
 		modelAndView.addObject("p", participant);
 		return modelAndView;
 			
 		}
+	@RequestMapping(value = "/raceInforesult")
+	public ModelAndView processRaceInfo(RaceInfo raceInfo) {
+		
+		ModelAndView modelAndView = new ModelAndView();
+		dao1.insertRaceInfo(raceInfo);
+		
+		modelAndView.setViewName("raceInfoResult");
+		modelAndView.addObject("r",raceInfo);
+		return modelAndView;
+	}
 	
-	
-	@RequestMapping(value = "/viewAll") 
-	public ModelAndView viewAll() {
+	@RequestMapping(value = "/viewAllParticipants") 
+	public ModelAndView viewAllParticipants() {
 		ModelAndView modelAndView = new ModelAndView();
 		List<Participant> allParticipants = dao.getAllParticipants();
 		modelAndView.setViewName("viewAllParticipants");
@@ -50,12 +78,25 @@ public class ParticipantController {
 		modelAndView.addObject("all", allParticipants);
 		return modelAndView;
 	}
-	
+	@RequestMapping(value = "/viewAllRaceInfo")
+	public ModelAndView viewAllRaceInfo() {
+		
+		ModelAndView modelAndView = new ModelAndView();
+		List<RaceInfo> allRaceInfo = dao1.getAllRaceInfo();
+		modelAndView.setViewName("viewAllRaceInfo");
+		modelAndView.addObject("all",allRaceInfo);
+		return modelAndView;
+	}
 	
 	@Bean
 		public ParticipantDao dao() {
 		ParticipantDao bean = new ParticipantDao();
 			return bean;
 	
+	}
+	@Bean
+	public RaceInfoDao dao1() {
+		RaceInfoDao bean = new RaceInfoDao();
+		return bean;
 	}
 }

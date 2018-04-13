@@ -10,7 +10,7 @@
 </head>
 <body>
 <h2>Race Information Form</h2>
-<mvc:form modelAttribute="raceInfo" action="result.mvc">
+<mvc:form modelAttribute="raceInfo" action="raceInfoResult.mvc">
 	<table>
 	    <tr>
 	        <td><mvc:label path="date">Date of Race (MM/DD/YYYY)</mvc:label></td>
@@ -35,6 +35,6 @@
 	    </tr>
 	</table>  
 </mvc:form>
-<a href = "viewAll.mvc">View all Races</a>
+<a href = "viewAllRaceInfo.mvc">View all Races</a>
 </body>
 </html>
