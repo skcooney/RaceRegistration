@@ -12,7 +12,6 @@ import javax.persistence.Table;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	
 	private String firstName;
 	private String lastName;
 	private String age;
@@ -20,8 +19,12 @@ import javax.persistence.Table;
 	private String state;
 	private Gender gender;
 	
-	
-	
+		public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public String getFirstName() {
 		return firstName;

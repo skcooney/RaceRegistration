@@ -8,7 +8,6 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 
-
 public class ParticipantDao {
 
 	EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("RaceRegistration");
@@ -29,5 +28,43 @@ public class ParticipantDao {
 		List<Participant> all = typedQuery.getResultList();
 				return all;
 	}
+	
+	public void deleteParticipant(Participant participanttoDelete) {
+		// TODO Auto-generated method stub
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<Participant> typedQuery = em.createQuery(
+				"select li from Participant li where li.participantId = :selectedId",Participant.class);
+		typedQuery.setParameter("selectedId", participanttoDelete.getId()); 
+		typedQuery.setMaxResults(1);
+		Participant result = typedQuery.getSingleResult();
+		System.out.println("TEST - result: " + result);
+		em.remove(result);
+		em.getTransaction().commit();
+		em.close();
+		
+	}	
+	
+	public Participant searchForParticipantById(int idToEdit) {
+		// TODO Auto-generated method stub
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		
+		Participant foundItem =  em.find(Participant.class, idToEdit);
+		em.close();
+		return foundItem; 
+	}
+
+	public void editParticipant(Participant toEdit) {
+		// TODO Auto-generated method stub
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin(); 
+		em.merge(toEdit);
+		em.getTransaction().commit();
+		em.close();
+	}
 }
+
+
+
 
