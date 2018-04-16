@@ -28,6 +28,7 @@
             <td>${r.raceType}</td>
         </tr>
         </table>
-<a href = "viewAllRaceInfo.mvc">View all Races</a>
+<a href = "viewAllRaceInfo.mvc">View all Races</a><br>
+<a href = "menu.mvc">Return to Main Menu</a>
 </body>
 </html>

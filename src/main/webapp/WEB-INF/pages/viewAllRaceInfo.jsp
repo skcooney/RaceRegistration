@@ -12,7 +12,7 @@
 <body>
 <c:forEach items="${all}" var ="item">
 	<%-- <c:forEach items="${all }" var="item"> --%>
-		<table>
+		<table border="1">
 			<tr>
 				<td>Date of Race:</td>
 				<td>${item.date}</td>
@@ -34,6 +34,6 @@
 		<hr style="text-align: left; margin-left: 0; width: 25%">
 		<br />
 	</c:forEach>
-	<a href="form.mvc">Add a new race</a>
+	<a href="menu.mvc">Return to Main Menu</a>
 </body>
 </html>
