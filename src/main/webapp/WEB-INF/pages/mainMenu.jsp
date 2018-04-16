@@ -9,20 +9,29 @@
 <body>
 <table>
         <tr>
-            <td><a href = "form.mvc">Add Participant</a></td>
-          </tr>
-        <tr>
-            <td><a href = "viewAllParticipants.mvc">View all Participants</a></td>
-        </tr>
-        </table>
-<br />
-<table>
-        <tr>
             <td><a href = "raceInfoForm.mvc">Add Race Information</a></td>
         </tr>
         <tr>
             <td><a href = "viewAllRaceInfo.mvc">View all Race Information</a></td>
         </tr>
         </table>
+<table>
+        <tr>
+            <td><a href = "form.mvc">Add Participant</a></td>
+          </tr>
+        <tr>
+            <td><a href = "viewAllParticipants.mvc">View all Participants</a></td>
+        </tr>
+        </table>
+<table>
+        <tr>
+            <td><a href = "registrationForm.mvc">Register for Race</a></td>
+          </tr>
+        <tr>
+            <td><a href = "viewAllRacesForParticipant.mvc">View my Race</a></td>
+        </tr>
+        </table>        
+<br />
+
 </body>
 </html>

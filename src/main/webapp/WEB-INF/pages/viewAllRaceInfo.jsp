@@ -10,30 +10,33 @@
 <title>All Race Information</title>
 </head>
 <body>
-<c:forEach items="${all}" var ="item">
-	<%-- <c:forEach items="${all }" var="item"> --%>
-		<table border="1">
-			<tr>
-				<td>Date of Race:</td>
-				<td>${item.date}</td>
-			</tr>
-			<tr>
-				<td>Race City:</td>
-				<td>${item.city}</td>
-			</tr>
-			<tr>
-				<td>Race State:</td>
-				<td>${item.state}</td>
-			</tr>
-			<tr>
-				<td>Type of Race:</td>
-				<td>${item.raceType}</td>
-			</tr>
+<div align="center">
+        <table border="1" cellpadding="5">
+            <h1>List of Races</h1>
+            <tr>
+                <th>Select Race</th>
+                <th>Date</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Race Type</th>
+            </tr>
+            <c:forEach items="${all}" var ="item">
+                <tr>
+                	<td><input type="radio" name="id"
+						value="${item.id}"></td>
+                    <td><c:out value="${item.date}" /></td>
+                    <td><c:out value="${item.city}" /></td>
+                    <td><c:out value="${item.state}" /></td>
+                    <td><c:out value="${item.raceType}" /></td>
+                </tr>
+            </c:forEach>
 		</table>
 		<br />
 		<hr style="text-align: left; margin-left: 0; width: 25%">
 		<br />
-	</c:forEach>
-	<a href="menu.mvc">Return to Main Menu</a>
+		
+<a href = "registrationForm.mvc">Register for Race</a>
+         </div>
+<a href="menu.mvc">Return to Main Menu</a>
 </body>
 </html>
