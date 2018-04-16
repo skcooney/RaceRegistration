@@ -8,6 +8,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Spring MVC Form Handling</title>
 </head>
+<style>
+span {
+	color: red
+}
+</style>
 <body>
 <h2>Participant Form</h2>
 <mvc:form modelAttribute="participant" action="result.mvc">
@@ -44,5 +49,8 @@
 	</table>  
 </mvc:form>
 <a href = "viewAllParticipants.mvc">View all Participants</a>
+<br />
+<a href="menu.mvc">Back to main menu</a>
+<br />
 </body>
 </html>
