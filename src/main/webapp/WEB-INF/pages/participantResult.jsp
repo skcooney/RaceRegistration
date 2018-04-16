@@ -36,5 +36,8 @@
         </tr>
         </table>
 <a href = "viewAllParticipants.mvc">View all Participants</a>
+<br />
+<a href="menu.mvc">Back to main menu</a>
+<br />
 </body>
 </html>

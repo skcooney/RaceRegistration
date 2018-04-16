@@ -42,5 +42,8 @@
 		<br />
 	</c:forEach>
 	<a href="form.mvc">Add a new participant</a>
+	<br />
+	<a href="menu.mvc">Back to main menu</a>
+	<br />
 </body>
 </html>
