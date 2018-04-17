@@ -8,7 +8,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Spring MVC From Handling</title>
 </head>
-<body> <h2>Participant Registration Result</h2>
+<body> 
+<img src="images/participant.jpg">
+<h2>Participant Registration Result</h2>
     <table>
         <tr>
             <td>First Name</td>
