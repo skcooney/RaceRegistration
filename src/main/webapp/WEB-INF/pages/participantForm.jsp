@@ -10,10 +10,11 @@
 </head>
 <style>
 span {
-	color: red
+	color: blue
 }
 </style>
 <body>
+<img src="images/rainbowRunner.jpg">
 <h2>Participant Form</h2>
 <mvc:form modelAttribute="participant" action="result.mvc">
 	<table>
