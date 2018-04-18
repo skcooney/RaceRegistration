@@ -11,8 +11,11 @@
 </head>
 <body>
 <div align="center">
+	<img src="images/runners.jpg">
+	
         <table border="1" cellpadding="5">
-            <h1>List of Races</h1>
+
+	<h1>List of Races</h1>
             <tr>
                 <th>Select Race</th>
                 <th>Date</th>
@@ -31,12 +34,12 @@
                 </tr>
             </c:forEach>
 		</table>
+		</div>
 		<br />
 		<hr style="text-align: left; margin-left: 0; width: 25%">
 		<br />
-		
-<a href = "registrationForm.mvc">Register for Race</a>
-         </div>
-<a href="menu.mvc">Return to Main Menu</a>
+ 	<a href = "registrationForm.mvc">Register for Race</a>
+	<br />        
+	<a href="menu.mvc">Return to Main Menu</a>
 </body>
 </html>
