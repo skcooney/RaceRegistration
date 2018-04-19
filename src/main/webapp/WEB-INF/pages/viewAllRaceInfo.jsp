@@ -25,12 +25,15 @@
             </tr>
             <c:forEach items="${all}" var ="item">
                 <tr>
-                	<td><input type="radio" name="id"
+                <form>
+                	<td><input type="text" name="id"
 						value="${item.id}"></td>
                     <td><c:out value="${item.date}" /></td>
                     <td><c:out value="${item.city}" /></td>
                     <td><c:out value="${item.state}" /></td>
                     <td><c:out value="${item.raceType}" /></td>
+                    <!-- button here -->
+                    </form>
                 </tr>
             </c:forEach>
 		</table>
@@ -38,7 +41,9 @@
 		<br />
 		<hr style="text-align: left; margin-left: 0; width: 25%">
 		<br />
- 	<a href = "registrationForm.mvc">Register for Race</a>
+ 	<a href = "registerForRace.mvc">Register for Race</a>
+ 	<br />
+ 	<a href = "registerParticipantForm.mvc">Register Participant for Race</a>
 	<br />        
 	<a href="menu.mvc">Return to Main Menu</a>
 </body>

@@ -3,11 +3,15 @@ package edu.dmacc.spring.raceregistration;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+
+
 
 @Controller
 public class RaceRegistrationController {
@@ -16,6 +20,7 @@ public class RaceRegistrationController {
 	
 	private static final String[] races = {"5k", "10k", "Half Marathon", "Full Marathon"};
 	private static final String [] states = {"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY","LA", "ME", "MD", "MA", "MI", "MN", "MS","MO", "MT", "NE", "NA", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN","TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
+	private static final ParticipantDao raceInfo = null;
 
 	
 	
@@ -39,7 +44,52 @@ public class RaceRegistrationController {
 
 			return modelAndView;
 		}
+		@RequestMapping(value = "/registerForRaceForm") 
+		public ModelAndView registerdParticipant() {
+			RaceInfo race = dao.findId(Id);
+			Participant participant = dao.findId(Id);
+			raceInfo.getAllParticipants().add(participant);
+			participant.getAllRaceInfo).add(raceInfo);
+			dao.add(raceInfo);
+			dao.add(participant);
+			ModelAndView modelAndView = new ModelAndView();
+			modelAndView.setViewName("/registerForRaceForm");
 
+			List<Participant> allParticipants = dao.getAllParticipants();
+			modelAndView.addObject("all", allParticipants);
+			modelAndView.addObject("registeredParticipant", new Participant());
+			modelAndView.addObject("states", states);
+			return modelAndView;
+		}
+		
+				
+		/*
+		
+		
+		@RequestMapping(value = "/registerForRaceForm") 
+		public ModelAndView registerForRace() {
+			String act=request.getParameter("doThisToRaceInfo");
+			ModelAndView modelAndView = new ModelAndView();
+			if(act=("Register for Race")) {
+				String checkId=request.getParameter("Id");
+				if(checkId==null) {
+				modelAndView.setViewName("raceNotChosen");
+				return modelAndView;
+				
+				}
+				Integer tempId=Integer.parseInt(request.getParameter("Id"));
+						
+				
+			}
+		
+			modelAndView.setViewName("/registerForRaceForm");
+			modelAndView.addObject("registerForRace", new Participant());
+			modelAndView.addObject("states", states);
+			return modelAndView;*/
+		
+			
+		
+		
 		@RequestMapping(value = "/menu")
 		public ModelAndView main() {
 			ModelAndView modelAndView = new ModelAndView();
