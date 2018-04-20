@@ -26,7 +26,7 @@
             <c:forEach items="${all}" var ="item">
                 <tr>
                 <form>
-                	<td><input type="text" name="id"
+                	<td><input type="radio" name="id"
 						value="${item.id}"></td>
                     <td><c:out value="${item.date}" /></td>
                     <td><c:out value="${item.city}" /></td>
@@ -41,7 +41,7 @@
 		<br />
 		<hr style="text-align: left; margin-left: 0; width: 25%">
 		<br />
- 	<a href = "registerForRace.mvc">Register for Race</a>
+ 	<a href = "registerForRaceForm.mvc">Register for Race</a>
  	<br />
  	<a href = "registerParticipantForm.mvc">Register Participant for Race</a>
 	<br />        
