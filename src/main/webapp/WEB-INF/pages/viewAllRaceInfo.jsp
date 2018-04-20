@@ -10,41 +10,35 @@
 <title>All Race Information</title>
 </head>
 <body>
-<div align="center">
-	<img src="images/runners.jpg">
-	
-        <table border="1" cellpadding="5">
+	<div align="center">
+		<img src="images/runners.jpg">
 
-	<h1>List of Races</h1>
-            <tr>
-                <th>Select Race</th>
-                <th>Date</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Race Type</th>
-            </tr>
-            <c:forEach items="${all}" var ="item">
-                <tr>
-                <form>
-                	<td><input type="radio" name="id"
-						value="${item.id}"></td>
-                    <td><c:out value="${item.date}" /></td>
-                    <td><c:out value="${item.city}" /></td>
-                    <td><c:out value="${item.state}" /></td>
-                    <td><c:out value="${item.raceType}" /></td>
-                    <!-- button here -->
-                    </form>
-                </tr>
-            </c:forEach>
-		</table>
+		<div align="center">
+			<table border="1" cellpadding="5">
+
+				<h1>List of Races</h1>
+				<tr>
+					
+					<th>Date</th>
+					<th>City</th>
+					<th>State</th>
+					<th>Race Type</th>
+				</tr>
+				<c:forEach items="${all}" var="item">
+					<tr>
+						<form>
+							
+							<td><c:out value="${item.date}" /></td>
+							<td><c:out value="${item.city}" /></td>
+							<td><c:out value="${item.state}" /></td>
+							<td><c:out value="${item.raceType}" /></td>
+							<!-- button here -->
+						</form>
+					</tr>
+				</c:forEach>
+			</table>
 		</div>
-		<br />
-		<hr style="text-align: left; margin-left: 0; width: 25%">
-		<br />
- 	<a href = "registerForRaceForm.mvc">Register for Race</a>
- 	<br />
- 	<a href = "registerParticipantForm.mvc">Register Participant for Race</a>
-	<br />        
-	<a href="menu.mvc">Return to Main Menu</a>
+		<br /> <a href="raceInfoForm.mvc">Add a new race</a> <br /> 
+		 <a href="menu.mvc">Return to Main Menu</a>
 </body>
 </html>

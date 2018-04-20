@@ -10,39 +10,35 @@
 <title>All Participants</title>
 </head>
 <body>
-<div align="center">
-	<img src="images/runners.jpg">
-		
+	<div align="center">
+		<img src="images/runners.jpg">
+
 		<div align="center">
-        <table border="1" cellpadding="5">
-            <h1>All Participants</h1>
-            <tr>
-            	<th>Select</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>City</th>
-                <th>State</th>
-            </tr>
-            <c:forEach items="${all}" var ="item">
-                <tr>
-                	<td><input type="radio" name="id" value="${item.id}"></td>
-                    <td><c:out value="${item.firstName}" /></td>
-                    <td><c:out value="${item.lastName}" /></td>
-                    <td><c:out value="${item.age}" /></td>
-                    <td><c:out value="${item.gender}" /></td>
-                    <td><c:out value="${item.city}" /></td>
-                    <td><c:out value="${item.state}" /></td>
-                </tr>
-            </c:forEach>
-		</table>
-		<br />
-		<hr style="text-align: left; margin-left: 0; width: 25%">
-		<br />
-	<a href="form.mvc">Add a new participant</a>
-	<br />
-	<a href="menu.mvc">Back to main menu</a>
-	<br />
+			<table border="1" cellpadding="5">
+				<h1>All Participants</h1>
+				<tr>
+					
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Age</th>
+					<th>Gender</th>
+					<th>City</th>
+					<th>State</th>
+				</tr>
+				<c:forEach items="${all}" var="item">
+					<tr>
+						
+						<td><c:out value="${item.firstName}" /></td>
+						<td><c:out value="${item.lastName}" /></td>
+						<td><c:out value="${item.age}" /></td>
+						<td><c:out value="${item.gender}" /></td>
+						<td><c:out value="${item.city}" /></td>
+						<td><c:out value="${item.state}" /></td>
+					</tr>
+				</c:forEach>
+			</table>
+			
+			<br /> <a href="form.mvc">Add a new participant</a> <br /> 
+			<a href="menu.mvc">Back to main menu</a> <br />
 </body>
 </html>
