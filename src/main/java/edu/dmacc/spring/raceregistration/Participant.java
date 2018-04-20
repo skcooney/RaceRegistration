@@ -1,5 +1,6 @@
 package edu.dmacc.spring.raceregistration;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,7 @@ import javax.persistence.Table;
 	public class Participant {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@Column (name = "id")
 	private int id;
 	private String firstName;
 	private String lastName;
@@ -19,13 +21,15 @@ import javax.persistence.Table;
 	private String state;
 	private Gender gender;
 	
-		public int getId() {
+	
+	
+	
+	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	
 	public String getFirstName() {
 		return firstName;
 	}

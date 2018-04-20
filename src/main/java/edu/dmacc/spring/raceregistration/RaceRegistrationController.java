@@ -40,37 +40,31 @@ public class RaceRegistrationController {
 		modelAndView.setViewName("raceInfoForm");
 		modelAndView.addObject("raceInfo",new RaceInfo());
 		modelAndView.addObject("races",races);
+		modelAndView.addObject("states", states);
 
 		return modelAndView;
 	}
 	@RequestMapping(value = "/registerParticipantForm") 
 	public ModelAndView viewAllRegistration() {
 		ModelAndView modelAndView = new ModelAndView();
+		//Participant participant = dao.findId(participant.getPartId());
+		//RaceInfo race = dao1.findId(id);
 		List<Participant> allParticipants = dao.getAllParticipants();
 		List<RaceInfo> allRaceInfo = dao1.getAllRaceInfo();
-		List<Registration> allRegistration = dao2.getAllRegistration();
+		//List<Registration> allRegistration = dao2.getAllRegistration();
 		//modelAndView.setViewName("viewAllRaceInfoToRegister");
 		modelAndView.setViewName("registerParticipantForm");
-		modelAndView.addObject("all",allRaceInfo);
-		modelAndView.addObject("all", allParticipants);
-		modelAndView.addObject("all", allRegistration);
+		modelAndView.addObject("allRaces",allRaceInfo);
+		modelAndView.addObject("allParts", allParticipants);
+		//modelAndView.addObject("all", allRegistration);
 		return modelAndView;
 	}
 	/*		
-		@RequestMapping(value = "/registerParticipantForm") 
-		public ModelAndView registerParticipantForm() {
-			ModelAndView modelAndView = new ModelAndView();
-			//Participant participant = dao.findId(id);
-			//RaceInfo race = dao1.findId(id);
-
 			//raceInfo.getAllParticipants().add(participant);
 			//participant.getAllRaceInfo().add(raceInfo);
 			//dao.insertParticipant(participant);
 			//dao1.insertRaceInfo(raceInfo);
 
-			modelAndView.setViewName("/registerParticipantForm");
-			//List<Participant> allParticipants = dao.getAllParticipants();
-			//List<RaceInfo> allRaceInfo = dao1.getAllRaceInfo();
 			modelAndView.setViewName("viewAllParticipants");
 			//modelAndView.setViewName("viewAllRaceInfo");
 			modelAndView.addObject("all", viewAllParticipants());
@@ -154,6 +148,11 @@ public class RaceRegistrationController {
 	@Bean
 	public RaceInfoDao dao1() {
 		RaceInfoDao bean = new RaceInfoDao();
+		return bean;
+	}
+	@Bean
+	public RegistrationDao dao2() {
+		RegistrationDao bean = new RegistrationDao();
 		return bean;
 	}
 }

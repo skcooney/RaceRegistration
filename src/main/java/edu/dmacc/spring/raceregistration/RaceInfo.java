@@ -16,7 +16,7 @@ public class RaceInfo {
 	private String city;
 	private String state;
 	private String raceType;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -35,17 +35,19 @@ public class RaceInfo {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
 	public String getState() {
 		return state;
 	}
 	public void setState(String state) {
 		this.state = state;
 	}
+
 	public String getRaceType() {
 		return raceType;
 	}
 	public void setRaceType(String raceType) {
 		this.raceType = raceType;
 	}
-	
+
 }

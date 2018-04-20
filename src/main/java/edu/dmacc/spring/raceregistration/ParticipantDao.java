@@ -28,14 +28,21 @@ public class ParticipantDao {
 		List<Participant> all = typedQuery.getResultList();
 				return all;
 	}
-	
-	public void deleteParticipant(Participant participanttoDelete) {
+	public List<Participant> getParticipantId() {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		String q = "select p from Participant p";
+		TypedQuery<Participant> typedQuery = em.createQuery(q, Participant.class);
+		List<Participant> all = typedQuery.getResultList();
+		return all;
+	}
+	/*public void deleteParticipant(Participant participanttoDelete) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		TypedQuery<Participant> typedQuery = em.createQuery(
 				"select li from Participant li where li.participantId = :selectedId",Participant.class);
-		typedQuery.setParameter("selectedId", participanttoDelete.getId()); 
+		typedQuery.setParameter("selectedId", participanttoDelete.getPartId()); 
 		typedQuery.setMaxResults(1);
 		Participant result = typedQuery.getSingleResult();
 		System.out.println("TEST - result: " + result);
@@ -61,9 +68,9 @@ public class ParticipantDao {
 		em.getTransaction().begin(); 
 		em.merge(toEdit);
 		em.getTransaction().commit();
-		em.close();
+		em.close();*/
 	}
-}
+
 
 
 
