@@ -17,6 +17,7 @@
         <table border="1" cellpadding="5">
             <h1>All Participants</h1>
             <tr>
+            	<th>Select</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Age</th>
@@ -26,7 +27,7 @@
             </tr>
             <c:forEach items="${all}" var ="item">
                 <tr>
-                	
+                	<td><input type="radio" name="id" value="${item.id}"></td>
                     <td><c:out value="${item.firstName}" /></td>
                     <td><c:out value="${item.lastName}" /></td>
                     <td><c:out value="${item.age}" /></td>

@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h2>Race Registration Form</h2>
-	<mvc:form modelAttribute="registerForRace" action="result.mvc">
+	<mvc:form modelAttribute="registerForRaceForm" action="result.mvc">
 
 <select>
     <c:forEach var="item" items="${obj.participant.id}">

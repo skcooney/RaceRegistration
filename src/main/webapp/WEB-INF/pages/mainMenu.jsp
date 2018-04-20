@@ -25,7 +25,7 @@
         </table>
 <table>
         <tr>
-            <td><a href = "registrationForm.mvc">Register for Race</a></td>
+            <td><a href = "registerParticipantForm.mvc">Register for Race</a></td>
           </tr>
         <tr>
             <td><a href = "viewAllRacesForParticipant.mvc">View my Race</a></td>
